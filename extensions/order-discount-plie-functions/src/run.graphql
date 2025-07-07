@@ -1,0 +1,34 @@
+query RunInput {
+  cart {
+    lines {
+      id
+      quantity
+      cost {
+        amountPerQuantity {
+          amount
+          currencyCode
+        }
+      }
+      merchandise {
+        ... on ProductVariant {
+          __typename
+          product {
+            id
+            title     
+            inAnyCollection(ids: ["gid://shopify/Collection/477972005161"])
+            hasAnyTag(tags: ["promo", "brinde"])      
+            inCollections(ids: [
+              "gid://shopify/Collection/477972005161",
+              "gid://shopify/Collection/484968694057",
+              "gid://shopify/Collection/484968431913",
+              "gid://shopify/Collection/485639684393"
+            ]) {
+              collectionId
+              isMember
+            }      
+          }
+        }
+      }
+    }
+  }
+}

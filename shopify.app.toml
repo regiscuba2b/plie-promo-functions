@@ -1,0 +1,24 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "a372573667cbcdd26dfa959cf8eca1dd"
+application_url = "https://shopify.dev/apps/default-app-home"
+embedded = true
+name = "discounts-plie-functions"
+handle = "discounts-plie-functions"
+
+[webhooks]
+api_version = "2025-04"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_discounts, read_discounts"
+
+[auth]
+redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
+
+[pos]
+embedded = false
+
+[build]
+include_config_on_deploy = true
+dev_store_url = "2bdigital.myshopify.com"
